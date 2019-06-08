@@ -1,0 +1,28 @@
+#!/bin/bash
+
+neededCPU=4
+neededGPU=2
+
+#prompt to enter values, default time is 3 seconds
+echo -n "Enter number of CPUs needed (default:4)> "
+read -t 3 neededCPU
+echo " "
+echo -n "Enter number of GPUs needed (default:2)> "
+read -t 3 neededGPU
+
+echo " "
+
+#assign default values if they are not set
+${neededCPU:=4}
+${neededGPU:=2}
+
+#print assigned values
+echo "CPUs requested: $neededCPU"
+echo "GPUs requested: $neededGPU"
+
+
+#run the command
+#set -x
+#uncomment the following line
+sinteractive -c $neededCPU -g $neededGPU
+#set +x

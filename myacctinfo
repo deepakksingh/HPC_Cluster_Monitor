@@ -1,0 +1,14 @@
+#!/bin/bash
+echo "######squeue information######"
+echo " "
+squeue -u dksingh
+
+echo " "
+echo "######sinfo information######"
+echo " "
+sinfo
+
+echo " "
+echo "######account information######"
+echo " "
+sacct --format=nodelist,jobid,jobname,state,allocgres,ncpus,elapsed

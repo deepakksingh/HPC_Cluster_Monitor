@@ -27,7 +27,7 @@ books = [
 
 @app.route('/', methods=['GET'])
 def home():
-    return "<h1>content</h1>"
+    return "<h1>content is here</h1>"
 
 @app.route('/api/v1/resources/books/all', methods=['GET'])
 def api_all():
